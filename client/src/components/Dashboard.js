@@ -15,7 +15,7 @@ return store.userDetails;
             body:dataToSend,
         };
 
-        let JSONData= await fetch("http://localhost:1467/deleteProfile", reqOptions);
+        let JSONData= await fetch("/deleteProfile", reqOptions);
         let JSOData= await JSONData.json();
         alert(JSOData.msg);
     }
@@ -30,7 +30,7 @@ return store.userDetails;
         {userDetails.firstName}
         {userDetails.lastName}
       </h3>
-      <img src={`http://localhost:1467/uploads/${userDetails.profilePic}`}></img>
+      <img src={`/uploads/${userDetails.profilePic}`}></img>
     </div>
   )
 }

@@ -12,7 +12,7 @@ function Login() {
 
     useEffect(() => {
 
-        axios.defaults.baseURL = "http://localhost:1467";
+        axios.defaults.baseURL = "";
         if (localStorage.getItem("token")) {
            // onValidateToken();
            axios.defaults.headers.common["authorization"] = localStorage.getItem("token");
@@ -29,7 +29,7 @@ function Login() {
             body: dataToSend,
         };
 
-        let JSONData = await fetch("http://localhost:1467/validateToken", reqOptions);
+        let JSONData = await fetch("/validateToken", reqOptions);
         let JSOData = await JSONData.json();
         console.log(JSOData);
         //alert(JSOData.msg);
@@ -52,7 +52,7 @@ function Login() {
             body: dataToSend,
         };
 
-        let JSONData = await fetch("http://localhost:1467/Login", reqOptions);
+        let JSONData = await fetch("/Login", reqOptions);
         let JSOData = await JSONData.json();
         console.log(JSOData);
         alert(JSOData.msg);

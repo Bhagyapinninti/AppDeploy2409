@@ -6,12 +6,14 @@ const jsonwebtoken =require("jsonwebtoken");
 const bcrypt =require("bcrypt");
 const dotenv =require("dotenv");
 dotenv.config();
+const path = require("path");
 
 const app=express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use('/uploads', express.static('uploads'));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 let authorise = (req, res, next) => {
     console.log("inside authorise middleware function");
@@ -32,6 +34,10 @@ const storage = multer.diskStorage({
   })
   
   const upload = multer({ storage: storage });
+
+  app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 app.post("/signup", upload.single("profilePic"), async(req,res)=>{
     console.log(req.body.profilePic);
