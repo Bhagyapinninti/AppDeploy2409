@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+form{
+  display: inline-block;
+  background-color: beige;
+  margin: 5px;
+  border: 0px;
+  box-shadow: 0px 0px 15px black;
+  border-radius: 20px;
+padding: 10px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 1.2rem;
+}
+form label{
+  display: inline-block;
+  width: 100px;
+}
+form div{
+  margin: 15px;
+}
+body{
+  background: linear-gradient(90deg,grey, lightblue);
+  margin:10px;
+}
+button{
+  background-color: lightgrey;
+  border: 0px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px black;
+  color: darkblue;
+  font-size: 1.4rem;
+  margin: 10px;
+  transition: transform 1s ease;
+  }
+  button:hover{
+    transform: scale(1.1);
+    background-color:rgb(162, 243, 243);
+  }
+  h2{
+    color: darkblue;
+  }
+  .profilePicPreview{
+    width: 150px;
+    height: 150px;
+
+  }
+  nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 2rem;
+    background-color: lightgrey;
+  }
